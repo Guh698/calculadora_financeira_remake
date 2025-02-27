@@ -1,0 +1,552 @@
+/*general*/
+
+* {
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  font-family: "Poppins", serif;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  color: #fff;
+  background-color: #000;
+  overflow: hidden;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+/*mobile*/
+@media (max-width: 450px) {
+  .menu_icon .bi-list {
+    display: none;
+  }
+}
+
+@media (min-width: 200px) {
+  /*animations*/
+  @keyframes shows {
+    0% {
+      transform: translateY(100vw) scale(0.9);
+    }
+    50% {
+      transform: translateY(-20px) scale(1.02);
+    }
+    100% {
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  /*navbar*/
+  .nav-container {
+    position: relative;
+    width: 100%;
+    height: 80px;
+  }
+
+  nav {
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .nav-items {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    height: 80px;
+    gap: 10px;
+  }
+
+  .nav-items .logo {
+    padding-left: 5px;
+    padding-top: 5px;
+  }
+
+  .nav-items .logo img {
+    width: 70px;
+    height: 70px;
+  }
+
+  .nav-items ul {
+    display: flex;
+    gap: 10px;
+  }
+
+  .nav-items ul li {
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.4s ease;
+  }
+
+  .nav-items ul li:hover {
+    color: #3b7ffe;
+  }
+
+  /*main*/
+  .content-container {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+
+  main {
+    width: 100%;
+    height: 100vh;
+  }
+
+  /*cálculos*/
+
+  .botoes_calculos-container {
+    width: 99%;
+    height: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+  }
+
+  .botoes_calculos-container.show {
+    opacity: 1;
+    animation: shows 0.2s 0s ease-in-out forwards;
+    height: 85%;
+  }
+
+  .botoes_calculos-container .botoes {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    gap: 30px;
+  }
+
+  .botoes_calculos-container .botoes .btn {
+    padding: 10px 20px;
+    border-radius: 8px;
+    background-color: #3b7ffe;
+    color: #fff;
+    height: 30px;
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  /*Escolhas dentro dos cálculos*/
+
+  /*geral btn*/
+  .botoes_de_escolhas-container {
+    position: relative;
+    width: 99%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .botoes_de_escolhas-container .botoes_de_escolha {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    flex-direction: column;
+    width: 300px;
+    gap: 30px;
+    margin-bottom: 40px;
+  }
+
+  .botoes_de_escolhas-container .botoes_de_escolha .btnS {
+    padding: 10px 20px;
+    border-radius: 8px;
+    background-color: #3b7ffe;
+    color: #fff;
+    height: 35px;
+    cursor: pointer;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  /*individual*/
+  .juros_bnt {
+    height: 0;
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 50px;
+  }
+
+  .juros_bnt.show {
+    opacity: 1;
+    height: 100%;
+    animation: shows 0.2s 0s ease-in-out forwards;
+  }
+
+  .descontos_bnt {
+    height: 0;
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 50px;
+  }
+
+  .descontos_bnt.show {
+    opacity: 1;
+    height: 100%;
+    animation: shows 0.2s 0s ease-in-out forwards;
+  }
+
+  .amortizacoes_btn {
+    height: 0;
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 50px;
+  }
+
+  .amortizacoes_btn.show {
+    opacity: 1;
+    height: 100%;
+    animation: shows 0.2s 0s ease-in-out forwards;
+  }
+
+  /*tabelas das fórmulas*/
+
+  .formulas-container {
+    position: absolute;
+    top: 0;
+    width: 99.6%;
+    height: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    opacity: 0;
+  }
+
+  .formulas-container.show {
+    opacity: 1;
+    animation: shows 0.2s 0s ease-in-out forwards;
+    height: 85%;
+  }
+
+  /*tabela 1*/
+
+  .nome_das_formulas {
+    font-weight: bold;
+    background-color: #000;
+    border: 5px solid #3b7ffe;
+    width: 80%;
+    border-radius: 8px;
+    padding: 10px;
+    cursor: default;
+  }
+
+  .nome_das_formulas h3 {
+    text-align: center;
+  }
+
+  .nome_das_formulas ul {
+    margin-top: 20px;
+    padding: 10px;
+  }
+
+  /*tabela 2*/
+
+  .formulas_matematicas {
+    font-weight: bold;
+    background-color: #000;
+    border: 5px solid #3b7ffe;
+    width: 80%;
+    border-radius: 8px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: default;
+  }
+
+  .formulas_matematicas h3 {
+    text-align: center;
+  }
+
+  .formulas_matematicas ul {
+    margin-top: 20px;
+    padding: 10px;
+  }
+
+  /*tabelas das incógnitas*/
+  .incognitas-container {
+    position: absolute;
+    top: 0;
+    width: 99.6%;
+    height: 0%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    opacity: 0;
+  }
+
+  .incognitas-container.show {
+    opacity: 1;
+    animation: shows 0.2s 0s ease-in-out forwards;
+    height: 85%;
+  }
+
+  /*tabela 1*/
+
+  .incognitas_juros {
+    font-weight: bold;
+    background-color: #000;
+    border: 5px solid #3b7ffe;
+    width: 80%;
+    border-radius: 8px;
+    padding: 10px;
+    cursor: default;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .incognitas_juros h3 {
+    text-align: center;
+  }
+
+  .incognitas_juros ul {
+    margin-top: 20px;
+    padding: 10px;
+  }
+
+  /*tabela 2*/
+
+  .incognitas_descontos {
+    font-weight: bold;
+    background-color: #000;
+    border: 5px solid #3b7ffe;
+    width: 80%;
+    border-radius: 8px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: default;
+  }
+
+  .incognitas_descontos h3 {
+    text-align: center;
+  }
+
+  .incognitas_descontos ul {
+    margin-top: 20px;
+    padding: 10px;
+  }
+
+  /*contas*/
+
+  .contas-container {
+    position: absolute;
+    top: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 99.6%;
+    color: #fff;
+  }
+
+  .contas {
+    margin-top: -120px;
+  }
+
+  .conta1,
+  .conta2,
+  .conta3,
+  .conta4,
+  .conta5,
+  .conta6,
+  .conta7,
+  .conta8,
+  .conta9,
+  .conta10 {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    gap: 10px;
+    height: 30%;
+    opacity: 1;
+    border-radius: 8px;
+    padding: 20px;
+    border: solid 5px #3b7ffe;
+    text-align: center;
+  }
+
+  .conta1 input,
+  .conta2 input,
+  .conta3 input,
+  .conta4 input,
+  .conta5 input,
+  .conta6 input,
+  .conta7 input,
+  .conta8 input,
+  .conta9 input,
+  .conta10 input {
+    border-radius: 8px;
+    padding: 8px;
+    outline: none;
+    border: none;
+  }
+
+  .conta1 button,
+  .conta2 button,
+  .conta3 button,
+  .conta4 button,
+  .conta5 button,
+  .conta6 button,
+  .conta7 button,
+  .conta8 button,
+  .conta9 button,
+  .conta10 button {
+    border-radius: 8px;
+    padding: 8px;
+    cursor: pointer;
+  }
+
+  /*footer*/
+
+  footer {
+    position: fixed;
+    display: flex;
+    width: 100%;
+    height: 40px;
+    justify-content: center;
+    gap: 10px;
+    bottom: 0;
+  }
+
+  footer a {
+    font-size: 14px;
+  }
+}
+
+/*desktops*/
+@media (min-width: 1024px) {
+  /*nav*/
+  .nav-items {
+    gap: 30px;
+  }
+
+  .nav-items .logo {
+    padding-left: 15px;
+    padding-top: 15px;
+  }
+
+  .nav-items .logo img {
+    width: 75px;
+    height: 75px;
+  }
+
+  .nav-items ul {
+    gap: 20px;
+  }
+
+  .nav-items ul li {
+    font-size: 14px;
+  }
+
+  .nav-items .menu_icon .bi-list {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 30px;
+    font-weight: bold;
+    padding: 15px;
+    display: none;
+  }
+
+  /*botões*/
+
+  .descontos_bnt {
+    width: 100%;
+    top: -5%;
+    position: absolute;
+  }
+
+  .amortizacoes_btn.show {
+    width: 100%;
+    top: -7%;
+    position: absolute;
+  }
+
+  /*tabelas das fórmulas*/
+  .formulas-container {
+    flex-direction: row;
+  }
+
+  /*tabela 1*/
+  .nome_das_formulas {
+    width: 60%;
+    margin-left: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 2;
+  }
+
+  /*tabela 2*/
+  .formulas_matematicas {
+    width: 60%;
+    margin-right: 50px;
+    line-height: 2;
+  }
+
+  /*tabelas das incógnitas*/
+  .incognitas-container {
+    flex-direction: row;
+    gap: 30px;
+  }
+
+  /*tabela 1*/
+  .incognitas_juros {
+    width: 60%;
+    margin-left: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 2;
+  }
+
+  /*tabela 2*/
+  .incognitas_descontos {
+    width: 60%;
+    margin-right: 50px;
+    line-height: 2;
+  }
+
+  /*footer*/
+
+  footer {
+    justify-content: start;
+    gap: 10px;
+    bottom: 0;
+    padding-left: 10px;
+  }
+
+  footer a {
+    font-size: 12px;
+    font-weight: bold;
+  }
+}
