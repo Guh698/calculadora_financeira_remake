@@ -192,6 +192,9 @@ a {
   }
 
   .descontos_bnt {
+    position: absolute;
+    width: 100%;
+    top: -10%;
     height: 0;
     opacity: 0;
     display: flex;
@@ -207,10 +210,14 @@ a {
   }
 
   .amortizacoes_btn {
+    position: absolute;
+    width: 100%;
+    top: 0;
     height: 0;
     opacity: 0;
     display: flex;
     flex-direction: column;
+    margin-top: -120px;
     justify-content: center;
     gap: 50px;
   }
@@ -487,7 +494,7 @@ a {
 
   .amortizacoes_btn.show {
     width: 100%;
-    top: -7%;
+    top: 7%;
     position: absolute;
   }
 
