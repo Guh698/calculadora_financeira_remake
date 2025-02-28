@@ -45,6 +45,42 @@ a {
     }
   }
 
+  @keyframes neonRGB {
+    0% {
+      box-shadow: 0 0 10px #3b7ffe, 0 0 10px #3b7ffe, 0 0 10px #3b7ffe;
+      border-color: #3b7ffe;
+    }
+    25% {
+      box-shadow: 0 0 10px #3b7ffe, 0 0 10px #3b7ffe, 0 0 15px #3b7ffe;
+
+      border-color: #3b7ffe;
+    }
+    50% {
+      box-shadow: 0 0 10px #3b7ffe, 0 0 10px #3b7ffe, 0 0 10px #3b7ffe;
+      border-color: #3b7ffe;
+    }
+    75% {
+      box-shadow: 0 0 15px #3b7ffe, 0 0 10px #3bffff, 0 0 10px #3bffff;
+      border-color: #3bffff;
+    }
+    100% {
+      box-shadow: 0 0 10px #3b7ffe, 0 0 10px #3b7ffe, 0 0 10px #3b7ffe;
+      border-color: #3b7ffe;
+    }
+  }
+
+  @keyframes border {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
   /*navbar*/
   .nav-container {
     position: relative;
@@ -164,15 +200,82 @@ a {
     margin-bottom: 40px;
   }
 
-  .botoes_de_escolhas-container .botoes_de_escolha .btnS {
+  .botoes_calculos-container .botoes .btn {
+    position: relative;
     padding: 10px 20px;
     border-radius: 8px;
-    background-color: #3b7ffe;
     color: #fff;
-    height: 35px;
-    cursor: pointer;
+    height: 40px;
     text-align: center;
     font-weight: bold;
+    cursor: pointer;
+    background-color: transparent;
+  }
+
+  .botoes_calculos-container .botoes .btn::before,
+  .botoes_calculos-container .botoes .btn::after {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    width: calc(100% + 14px);
+    height: calc(100% + 14px);
+    top: -7px;
+    left: -7px;
+    filter: blur(10px);
+    border-radius: 8px;
+    background: linear-gradient(
+      45deg,
+      #795fec,
+      #5907f3,
+      #563cb4,
+      #001aff,
+      #0099ff,
+      #795fec,
+      #5907f3,
+      #0099ff,
+      #563cb4,
+      #001aff
+    );
+    background-size: 200%;
+    animation: border 6s linear infinite;
+  }
+
+  .btnS {
+    position: relative;
+    background-color: transparent;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  .btnS::before,
+  .btnS::after {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    width: calc(100% + 14px);
+    height: calc(100% + 14px);
+    top: -7px;
+    left: -7px;
+    filter: blur(10px);
+    border-radius: 8px;
+    background: linear-gradient(
+      45deg,
+      #795fec,
+      #5907f3,
+      #563cb4,
+      #001aff,
+      #0099ff,
+      #795fec,
+      #5907f3,
+      #0099ff,
+      #563cb4,
+      #001aff
+    );
+    background-size: 200%;
+    animation: border 6s linear infinite;
+    cursor: pointer;
   }
 
   /*individual*/
@@ -187,7 +290,7 @@ a {
 
   .juros_bnt.show {
     opacity: 1;
-    height: 100%;
+    height: 30%;
     animation: shows 0.2s 0s ease-in-out forwards;
   }
 
@@ -254,11 +357,15 @@ a {
   .nome_das_formulas {
     font-weight: bold;
     background-color: #000;
-    border: 5px solid #3b7ffe;
+    border: 2px solid #3b7ffe;
     width: 80%;
     border-radius: 8px;
     padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     cursor: default;
+    animation: neonRGB 5s infinite alternate;
   }
 
   .nome_das_formulas h3 {
@@ -275,7 +382,7 @@ a {
   .formulas_matematicas {
     font-weight: bold;
     background-color: #000;
-    border: 5px solid #3b7ffe;
+    border: 2px solid #3b7ffe;
     width: 80%;
     border-radius: 8px;
     padding: 10px;
@@ -283,6 +390,7 @@ a {
     flex-direction: column;
     align-items: center;
     cursor: default;
+    animation: neonRGB 5s infinite alternate;
   }
 
   .formulas_matematicas h3 {
@@ -319,7 +427,7 @@ a {
   .incognitas_juros {
     font-weight: bold;
     background-color: #000;
-    border: 5px solid #3b7ffe;
+    border: 2px solid #3b7ffe;
     width: 80%;
     border-radius: 8px;
     padding: 10px;
@@ -327,6 +435,7 @@ a {
     display: flex;
     flex-direction: column;
     align-items: center;
+    animation: neonRGB 5s infinite alternate;
   }
 
   .incognitas_juros h3 {
@@ -343,7 +452,7 @@ a {
   .incognitas_descontos {
     font-weight: bold;
     background-color: #000;
-    border: 5px solid #3b7ffe;
+    border: 2px solid #3b7ffe;
     width: 80%;
     border-radius: 8px;
     padding: 10px;
@@ -351,6 +460,7 @@ a {
     flex-direction: column;
     align-items: center;
     cursor: default;
+    animation: neonRGB 5s infinite alternate;
   }
 
   .incognitas_descontos h3 {
@@ -377,6 +487,8 @@ a {
 
   .contas {
     margin-top: -120px;
+    border-radius: 8px;
+    animation: neonRGB 5s infinite alternate;
   }
 
   .conta1,
@@ -397,7 +509,7 @@ a {
     opacity: 1;
     border-radius: 8px;
     padding: 20px;
-    border: solid 5px #3b7ffe;
+    border: solid 2px #3b7ffe;
     text-align: center;
   }
 
@@ -486,6 +598,28 @@ a {
 
   /*botões*/
 
+  .botoes_calculos-container .botoes {
+    height: 100%;
+    justify-content: center;
+  }
+
+  .botoes_calculos-container .botoes .btn {
+    transition: 100ms ease;
+  }
+
+  .botoes_calculos-container .botoes .btn:hover {
+    transform: translateY(5px);
+  }
+
+  /*escolha das contas*/
+  .botoes_de_escolhas-container .botoes_de_escolha .btnS {
+    transition: 100ms ease;
+  }
+
+  .botoes_de_escolhas-container .botoes_de_escolha .btnS:hover {
+    transform: translateY(5px);
+  }
+
   .descontos_bnt {
     width: 100%;
     top: -5%;
@@ -554,6 +688,144 @@ a {
 
   footer a {
     font-size: 12px;
+    font-weight: bold;
+  }
+}
+
+@media (min-width: 1570px) {
+  /*nav*/
+
+  .nav-container {
+    height: 90px;
+  }
+
+  .nav-items {
+    height: 90px;
+  }
+
+  .nav-items .logo {
+    padding-left: 20px;
+    padding-top: 20px;
+  }
+
+  .nav-items .logo img {
+    width: 95px;
+    height: 95px;
+  }
+
+  .nav-items ul li {
+    font-size: 24px;
+  }
+
+  /*botões*/
+
+  .botoes_calculos-container .botoes {
+    width: 500px;
+    gap: 30px;
+  }
+
+  .botoes_calculos-container .botoes .btn {
+    font-size: 20px;
+    padding: 20px 20px;
+  }
+
+  /*botões de escolha*/
+
+  .botoes_de_escolhas-container .botoes_de_escolha {
+    width: 500px;
+  }
+
+  .botoes_de_escolhas-container .botoes_de_escolha .btnS {
+    padding: 20px 20px;
+    font-size: 20px;
+  }
+
+  /*tabelas das fórmulas*/
+
+  /*tabela 1*/
+  .nome_das_formulas {
+    font-size: 24px;
+  }
+
+  /*tabela 2*/
+  .formulas_matematicas {
+    font-size: 24px;
+  }
+
+  /*tabelas das incógnitas*/
+
+  /*tabela 1*/
+  .incognitas_juros {
+    margin-right: 70px;
+    font-size: 24px;
+  }
+
+  /*tabela 2*/
+  .incognitas_descontos {
+    font-size: 24px;
+    margin-left: 70px;
+  }
+
+  /*contas*/
+  .contas {
+    width: 40%;
+    height: 40%;
+  }
+
+  .conta1,
+  .conta2,
+  .conta3,
+  .conta4,
+  .conta5,
+  .conta6,
+  .conta7,
+  .conta8,
+  .conta9,
+  .conta10 {
+    width: 100%;
+    height: 100%;
+    font-size: 24px;
+  }
+
+  .conta1 input,
+  .conta2 input,
+  .conta3 input,
+  .conta4 input,
+  .conta5 input,
+  .conta6 input,
+  .conta7 input,
+  .conta8 input,
+  .conta9 input,
+  .conta10 input {
+    font-size: 20px;
+  }
+
+  .conta1 button,
+  .conta2 button,
+  .conta3 button,
+  .conta4 button,
+  .conta5 button,
+  .conta6 button,
+  .conta7 button,
+  .conta8 button,
+  .conta9 button,
+  .conta10 button {
+    font-size: 20px;
+    width: 40%;
+    align-self: center;
+  }
+
+  /*footer*/
+
+  footer {
+    justify-content: start;
+    gap: 10px;
+    bottom: 0;
+    padding-left: 10px;
+  }
+
+  footer a {
+    font-size: 16px;
     font-weight: bold;
   }
 }
